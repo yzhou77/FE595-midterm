@@ -31,6 +31,8 @@ def ratingclean(data):
             a = item.split("/")[0]
             b = item.split("/")[1]
             c = round(float(a)/float(b)*10)
+            if c > 10:
+                c = 10
             clean.append(c)
     return clean
 

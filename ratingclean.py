@@ -33,6 +33,8 @@ def ratingclean(data):
             c = round(float(a)/float(b)*10)
             if c > 10:
                 c = 10
+            if c < 1:
+                c = 1
             clean.append(c)
     return clean
 

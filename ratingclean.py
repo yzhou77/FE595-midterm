@@ -1,32 +1,33 @@
 import pandas as pd
+import numpy as np
 
 def ratingclean(data):
-    raw_rating = data["Rating"]
-    rating = raw_rating.dropna(axis=0,how='all')
-    clean = []
-    for item in rating:
-        if len(item) > 10:
-            pass
+    for i in range(len(data)):
+        item = data["Rating"][i]
+        if type(item) == float:
+            data.loc[i,"Rating"] = np.nan
+        elif len(item) > 10:
+            data.loc[i,"Rating"] = np.nan
         elif item =="A":
-            clean.append(10)
+            data.loc[i,"Rating"] = 10
         elif item =="A-":
-            clean.append(9)
+            data.loc[i,"Rating"] = 9
         elif item =="B+":
-            clean.append(8)
+            data.loc[i,"Rating"] = 8
         elif item =="B":
-            clean.append(7)
+            data.loc[i,"Rating"] = 7
         elif item =="B-":
-            clean.append(6)
+            data.loc[i,"Rating"] = 6
         elif item =="C+":
-            clean.append(5)
+            data.loc[i,"Rating"] = 5
         elif item =="C":
-            clean.append(4)
+            data.loc[i,"Rating"] = 4
         elif item =="C-":
-            clean.append(3)
+            data.loc[i,"Rating"] = 3
         elif item =="D+":
-            clean.append(2)
+            data.loc[i,"Rating"] = 2
         elif item =="D":
-            clean.append(1)
+            data.loc[i,"Rating"] = 1
         elif "/" in item:
             a = item.split("/")[0]
             b = item.split("/")[1]
@@ -35,8 +36,9 @@ def ratingclean(data):
                 c = 10
             if c < 1:
                 c = 1
-            clean.append(c)
-    return clean
+            data.loc[i,"Rating"] = c
+    data.to_csv('ratingclean.csv')
+    return data
 
 if __name__ == '__main__':
     data = pd.read_csv("harry_potter_and_the_goblet_of_fire.csv")

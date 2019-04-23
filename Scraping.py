@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import re
 import time
 import pandas as pd
+from Get_id import get_id
 
 def getData(movie_id):
     page = requests.get('https://www.rottentomatoes.com/m/'+ movie_id + '/reviews/')
@@ -36,6 +37,7 @@ def getData(movie_id):
 
 
 if __name__ == '__main__':
-	id= 'harry_potter_and_the_goblet_of_fire'
-	data = getData(id)
-	print (data.head())
+    Name = 'the goblet of fire'
+    id = get_id(Name)
+    data = getData(id)
+    print (data.head())

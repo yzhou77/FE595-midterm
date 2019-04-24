@@ -23,7 +23,7 @@ def getrate(Name):
 
 if __name__ == '__main__':
     Name = 'the goblet of fire'
-    Name = 'The avengers'
+    Name = 'The revengers'
     score = getrate(Name)
     print('The correction score of this movie is :', score)
 

@@ -6,6 +6,8 @@ def ratingclean(data):
         item = data["Rating"][i]
         if type(item) == float:
             data.loc[i,"Rating"] = np.nan
+        elif type(item) == int:
+            data.loc[i,"Rating"] = item
         elif len(item) > 10:
             data.loc[i,"Rating"] = np.nan
         elif item =="A":
@@ -31,14 +33,18 @@ def ratingclean(data):
         elif "/" in item:
             a = item.split("/")[0]
             b = item.split("/")[1]
-            c = round(float(a)/float(b)*10)
-            if c > 10:
-                c = 10
-            if c < 1:
-                c = 1
-            data.loc[i,"Rating"] = c
+            if type(a) != float:
+                data.loc[i,"Rating"] = np.nan
+            elif type(b) != float:
+                data.loc[i,"Rating"] = np.nan
+            else:
+                c = round(float(a)/float(b)*10)
+                if c > 10:
+                    c = 10
+                if c < 1:
+                    c = 1
+                data.loc[i,"Rating"] = c
     data.to_csv('ratingclean.csv')
-    return data
 
 if __name__ == '__main__':
     data = pd.read_csv("harry_potter_and_the_goblet_of_fire.csv")

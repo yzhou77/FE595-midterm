@@ -33,9 +33,9 @@ def ratingclean(data):
         elif "/" in item:
             a = item.split("/")[0]
             b = item.split("/")[1]
-            if type(a) != float:
+            if type(float(a)) != float:
                 data.loc[i,"Rating"] = np.nan
-            elif type(b) != float:
+            elif type(float(b)) != float:
                 data.loc[i,"Rating"] = np.nan
             else:
                 c = round(float(a)/float(b)*10)

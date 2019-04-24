@@ -1,7 +1,7 @@
 from sklearn import datasets
 from sklearn.model_selection import cross_val_predict
 from sklearn import linear_model
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import matplotlib.cm
 import pandas as pd
 import numpy as np
@@ -46,11 +46,11 @@ def plotRegression(nltk_score_array, Rate_array):
     regr = linear_model.LinearRegression()
     regr.fit(x_train, y_train)
     y_pred = regr.predict(x_test)
-    plt.scatter(x_test, y_test, color='black')
-    plt.plot(x_test, y_pred, color='blue', linewidth=3)
-    plt.grid(True)
-    plt.axhline(y=0, color='k')
-    plt.show()
+    #plt.scatter(x_test, y_test, color='black')
+    #plt.plot(x_test, y_pred, color='blue', linewidth=3)
+    #plt.grid(True)
+    #plt.axhline(y=0, color='k')
+    #plt.show()
 
 
 def ratingRectification(data, coefficient, intercept):

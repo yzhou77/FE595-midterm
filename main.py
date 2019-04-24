@@ -150,8 +150,6 @@ if __name__ == '__main__':
     reg = doRegression(nltk_score_array, Rate_array)
     Intercept = float(reg[0].intercept_)
     Coefficient = float(reg[0].coef_)
-    # Intercept is 7.593519690273348
-    # Coefficient is 0.712726450162214
     data_rectified = ratingRectification(data, Coefficient, Intercept)
     ScoreResponded = data_rectified.loc[:, "Rating"].mean()
     print(ScoreResponded)

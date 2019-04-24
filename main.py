@@ -3,7 +3,6 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import re
 import time
-import pandas as pd
 from Get_id import get_id
 import numpy as np
 from sklearn import datasets

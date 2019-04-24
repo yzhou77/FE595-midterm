@@ -33,17 +33,15 @@ def ratingclean(data):
         elif "/" in item:
             a = item.split("/")[0]
             b = item.split("/")[1]
-            if type(float(a)) != float:
-                data.loc[i,"Rating"] = np.nan
-            elif type(float(b)) != float:
-                data.loc[i,"Rating"] = np.nan
-            else:
+            try:
                 c = round(float(a)/float(b)*10)
                 if c > 10:
                     c = 10
                 if c < 1:
                     c = 1
                 data.loc[i,"Rating"] = c
+            except ValueError:
+                data.loc[i,"Rating"] = np.nan
     data.to_csv('ratingclean.csv')
 
 if __name__ == '__main__':

@@ -10,6 +10,8 @@ def ratingclean(data):
             data.loc[i,"Rating"] = item
         elif len(item) > 10:
             data.loc[i,"Rating"] = np.nan
+        elif item == "A+":
+            data.loc[i, "Rating"] = 12
         elif item =="A":
             data.loc[i,"Rating"] = 10
         elif item =="A-":

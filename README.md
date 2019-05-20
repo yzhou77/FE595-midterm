@@ -5,33 +5,33 @@ Task assignment
 
 Dan Wang:
 
-Analyze and design prototype .
-Develop the function of Scraping.py which grasps the id of a movie like Harry Potter and comments following it
-Creates a csv file for date, review, and rating(may missed) for movie.
-Program an id analysis function to interpret id input from user and to generate the full name of the movie associated with id.
-Test and degbug programs. 
+* Analyze and design prototype .
+* Develop the function of Scraping.py which grasps the id of a movie like Harry Potter and comments following it
+* Creates a csv file for date, review, and rating(may missed) for movie.
+* Program an id analysis function to interpret id input from user and to generate the full name of the movie associated with id.
+* Test and degbug programs. 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
 Yixi Zhou:
 
-Make project plan and monitor schedules
-Import the downloaded film csv data file to Python.
+* Make project plan and monitor schedules
+* Import the downloaded film csv data file to Python.
 
-Clean the rating data, remove NAs, classify the remaining rating and use rank 1-10 to express each one.
+* Clean the rating data, remove NAs, classify the remaining rating and use rank 1-10 to express each one.
 
-Merge the scrapy file, the clean data file and the regression file to one main file. 
+* Merge the scrapy file, the clean data file and the regression file to one main file. 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 Hao Chen:
 
-Utilize SentimentIntensityAnalyzer in nlp to program a function quantify all the comments related to the input movie in clean data csv.
-Develop an linear regression method to fit movie grades  to comments grades quantified by nlp.
-Fill the grades for records with blank grade column based on the parameters from linear regression and create rectified csv.
-Grade the input movie according to the average score of all comments and respond the final result.
-Develop the front page to display the final result. 
+* Utilize SentimentIntensityAnalyzer in nlp to program a function quantify all the comments related to the input movie in clean data csv.
+* Develop an linear regression method to fit movie grades  to comments grades quantified by nlp.
+* Fill the grades for records with blank grade column based on the parameters from linear regression and create rectified csv.
+* Grade the input movie according to the average score of all comments and respond the final result.
+* Develop the front page to display the final result. 
 -----------------------------------------------------------------------------------------------------------------------------------------
 ## Usage
 * You should pip install rotten_tomatoes_client

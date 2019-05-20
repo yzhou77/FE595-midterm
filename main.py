@@ -22,10 +22,24 @@ def getrate(Name):
     return ScoreResponded
 
 if __name__ == '__main__':
-    Name = 'the goblet of fire'
-    Name = 'The revengers'
+    Name = 'Harry Potter and the Goblet of Fire'
     score = getrate(Name)
     print('The correction score of this movie is :', score)
 
+    Name = 'The Avengers'
+    score = getrate(Name)
+    print('The correction score of this movie is :', score)
+
+    Name = 'A Christmas Story'
+    score = getrate(Name)
+    print('The correction score of this movie is :', score)
+
+    Name = 'Star Wars'
+    score = getrate(Name)
+    print('The correction score of this movie is :', score)
+
+    Name = 'The Wandering Earth'
+    score = getrate(Name)
+    print('The correction score of this movie is :', score)
 
 
